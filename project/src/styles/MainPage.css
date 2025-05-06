@@ -1,0 +1,87 @@
+.window-box-MP{
+    width: 950px;
+    height: 700px;
+    position: absolute;
+    background-color: #4f46e5;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.window-header-MP{
+  touch-action: none;
+
+  width: 950px;
+  height: 40px;
+  background-color: #4f46e5;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 12px;
+  cursor: grab;
+  font-size: 2rem;
+  user-select: none;
+}
+
+
+
+.window-content-MP{
+  width: 930px;
+  height: 680px;
+  background-color: antiquewhite;
+  box-shadow: inset 0 0 0 3px blue;
+  border-radius: 12px;
+  display: block;
+  justify-content: center;
+  padding: 10px;
+}
+
+.window-content-MP .scroll{
+  width: 100%;
+  height: 50%;
+  overflow-y: auto;
+}
+
+.close-button-MP {
+  position: absolute; /* Position the button on top of the header */
+  top: .5%; /* Adjust to position it from the top */
+  right: 1%; /* Adjust to position it from the right */
+  background: transparent; /* Make background transparent */
+  border: none; /* Remove border */
+  color: white; /* Set button color */
+  font-size: 15px; /* Adjust button size */
+  border-radius: 5px;
+  cursor: pointer; /* Make it a pointer cursor on hover */
+}
+
+.button-pannel-mainpage{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  width: 80%;
+  margin: 0 auto;
+}
+.button-pannel-mainpage .fa-solid{
+  text-shadow: 3px 3px 0px #b3b3b3;
+}
+
+
+
+
+@media (max-width:1300px){
+  /* MAIN PAGE*/
+  .window-box-MP{
+      width: 700px;
+      height: 450px;
+  }
+  .window-header-MP{
+      width: 700px;
+  }
+  .window-content-MP{
+      width: 680px;
+      height: 450px;
+  }
+}
+  

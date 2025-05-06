@@ -1,0 +1,70 @@
+
+
+html, body, #root {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow: hidden;
+  background-color: grey;
+}
+
+.App{
+  position: relative;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  font-family: 'Quicksand'; 
+  font-weight: 50;
+}
+.window-box{
+  
+  width: 300px;
+  position: absolute;
+  background-color: #4f46e5;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  
+}
+.window-header{
+  width: 300px;
+  height: 20x;
+  background-color: #4f46e5;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 12px;
+  cursor: grab;
+  font-size: 1.2rem;
+  user-select: none;
+}
+
+.window-content{
+  width: 280px;
+  height: 180px;
+  background-color: antiquewhite;
+  box-shadow: inset 0 0 0 3px blue;
+  display: block;
+  justify-content: center;
+  padding: 10px;
+}
+
+.window-content .scroll{
+  width: 100%;
+  height: 50%;
+  overflow-y: auto;
+}
+
+.close-button {
+  position: absolute; /* Position the button on top of the header */
+  top: .5%; /* Adjust to position it from the top */
+  right: 1%; /* Adjust to position it from the right */
+  background: transparent; /* Make background transparent */
+  border: none; /* Remove border */
+  color: white; /* Set button color */
+  font-size: 15px; /* Adjust button size */
+  border-radius: 5px;
+  cursor: pointer; /* Make it a pointer cursor on hover */
+}
+
