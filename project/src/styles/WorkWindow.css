@@ -1,5 +1,5 @@
 :root {
-    --window-width-work: 400px;
+    --window-width-work: 600px;
     --window-height-work: 800px;
   }
 
@@ -30,14 +30,15 @@
 }
 
 .window-content-work{
-width: calc(var(--window-width-work) - 20px);
-height: calc(var(--window-height-work) - 20px);
+  width: calc(var(--window-width-work) - 20px);
+  height: calc(var(--window-height-work) - 20px);
   background-color: antiquewhite;
   box-shadow: inset 0 0 0 3px blue;
   border-radius: 12px;
   display: block;
   justify-content: center;
   padding: 10px;
+  overflow: auto;
 }
 
 .close-button-work {
@@ -72,16 +73,42 @@ height: calc(var(--window-height-work) - 20px);
     
 }
 
-  .skill-box:hover {
-    box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.3);
-  }
+.skill-box:hover {
+  box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.3);
+}
 
-  .divider {
-    height: 1px;
-    background-color: #ccc;
-    margin: 16px 0;
-    width: 100%;
-  }
+.divider {
+  height: 1px;
+  background-color: #ccc;
+  margin: 16px 0;
+  width: 100%;
+}
+
+.test-work-container{
+  margin-bottom: 5px;
+}
+
+.test-work-container-intro{
+  display: flex;
+  flex-direction: row;
+}
+
+.test-work-container-intro {
+  display: flex;
+  align-items: flex-start; /* optional: or center */
+  gap: 16px; /* space between image and content */
+}
+
+.test-work-image {
+  /* your image styles are already fine, but confirm width/height */
+  flex-shrink: 0; /* prevents image from shrinking */
+}
+
+.test-work-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
 
 
 
