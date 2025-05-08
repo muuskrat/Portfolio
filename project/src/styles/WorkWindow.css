@@ -84,27 +84,30 @@
   width: 100%;
 }
 
-.test-work-container{
+.work-container{
   margin-bottom: 5px;
 }
+.work-content > div + div {
+  margin-top: 12px;
+}
 
-.test-work-container-intro{
+.work-container-intro {
   display: flex;
+  align-items: flex-start; 
   flex-direction: row;
+  gap: 16px; 
+}
+.work-title{
+  align-self: flex-end;
+  margin-right: 10px;
 }
 
-.test-work-container-intro {
-  display: flex;
-  align-items: flex-start; /* optional: or center */
-  gap: 16px; /* space between image and content */
+.work-image {
+  flex-shrink: 0;
+  align-self: center;
 }
 
-.test-work-image {
-  /* your image styles are already fine, but confirm width/height */
-  flex-shrink: 0; /* prevents image from shrinking */
-}
-
-.test-work-content {
+.work-content {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
