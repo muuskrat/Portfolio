@@ -112,7 +112,7 @@ const projects = [
 
                     <div className="window-content-work">
                         <h2>Development Skills</h2>
-                        <SkillBoxes skills={['C', 'C++', 'Java', 'Python', 'JS', 'HTML', 'CSS', 'React']}/>
+                        <SkillBoxes skills={['C', 'C++', 'Java', 'Python', 'JS', 'HTML', 'CSS', 'React', 'Node.js']}/>
                         <div class="divider"></div>
                         <h2>Projects</h2>
                         <div className="projects">

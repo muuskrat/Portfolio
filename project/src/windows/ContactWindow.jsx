@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence, createBox } from "framer-motion"; 
 import { useDraggableWindow } from '../components/useDraggableWindow';
+import ContactForm from '../components/ContactForm';
 
 export const Contact = ({ onClose, onBringToFront, zIndex, openWindow }) => {
     const {
@@ -43,9 +44,8 @@ export const Contact = ({ onClose, onBringToFront, zIndex, openWindow }) => {
                     <strong>Contact</strong>
                 </div>
                     <button className="close-button-MP" onClick={onClose}>[ x ]</button>
-
                     <div className="window-content-MP">                    
-
+                        <ContactForm />
                     </div>
             </motion.div>
         </div>
