@@ -52,7 +52,7 @@ export const About = ({ onClose, onBringToFront, zIndex, openWindow }) => {
                             <div className="about-title">
                                 <h1>Mario Orlando</h1>
                                 <h2>california based software engineer and web develoepr</h2>
-                                <h2>Recent graduate</h2>
+                                <h2>software engineer at Evu</h2>
                             </div>
                         </div>
 

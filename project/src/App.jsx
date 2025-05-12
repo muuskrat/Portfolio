@@ -8,6 +8,8 @@ import { About } from './windows/AboutWindow'
 import { Links } from './windows/LinksWindow'
 import { Work } from './windows/WorkWindow'
 import { Contact } from './windows/ContactWindow'
+import { Success } from './windows/SentSuccessWindow'
+import { Failed } from './windows/SentFailedWindow'
 
 import { AnimatePresence, motion } from "framer-motion";
 
@@ -104,10 +106,35 @@ const bringToFront = (id) => {
                           zIndex={openWindows.indexOf("Contact") + 1} 
                           onBringToFront={() => bringToFront("Contact")}
                           onClose={() => closeWindow("Contact")}
+                          openWindow={openWindow}
+                          openWindows={openWindows}
                 />
               )}
             </AnimatePresence>
+
+            <AnimatePresence>
+              {openWindows.includes("Success") && (
+                <Success id="Success"
+                          zIndex={openWindows.indexOf("Success") + 1} 
+                          onBringToFront={() => bringToFront("Success")}
+                          onClose={() => closeWindow("Success")}
+                />
+              )}
+            </AnimatePresence>
+
+            <AnimatePresence>
+              {openWindows.includes("Failed") && (
+                <Failed id="Failed"
+                          zIndex={openWindows.indexOf("Failed") + 1} 
+                          onBringToFront={() => bringToFront("Failed")}
+                          onClose={() => closeWindow("Failed")}
+                />
+              )}
+            </AnimatePresence>
+
           </DndContext>
+
+          
           
         </div>
       </div>

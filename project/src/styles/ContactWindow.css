@@ -1,0 +1,169 @@
+/* Style for the email container */
+.email-container {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  color: #007aff; /* Blue color */
+  text-decoration: underline;
+  font-weight: bold;
+}
+
+/* Tooltip bubble styling */
+.email-tooltip {
+  position: absolute;
+  bottom: 120%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #222;
+  color: #fff;
+  padding: 6px 10px;
+  border-radius: 8px;
+  font-size: 12px;
+  white-space: nowrap;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+  z-index: 10;
+  pointer-events: none;
+  opacity: 0; /* Start as invisible */
+  transition: opacity 0.6s ease-in-out; /* Slow fade in/out */
+}
+
+/* Tooltip bubble shown when hovered */
+.email-container:hover .email-tooltip {
+  opacity: 1; /* Fade in when hovered */
+}
+
+/* Arrow for the tooltip */
+.email-tooltip::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-top: 6px solid #222;
+}
+
+.left-side {
+  width: 60%; /* Adjust width as needed */
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Horizontally centers the content */
+  justify-content: center; /* Vertically centers the content */
+  height: 100%; /* Ensure the full height of the parent container is used */
+  text-align: center; /* Centers the text within the content */
+  flex: 1;
+}
+
+
+.left-side p {
+  margin-bottom: 5px; 
+  justify-content: center;
+  
+}
+
+.left-side img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.right-side p {
+  margin-bottom: 1px; 
+}
+
+
+/* Right column for the contact form */
+.right-side {
+  width: 35%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0 1rem; /* <-- Add horizontal padding */
+  box-sizing: border-box;
+  flex: 1.1;
+}
+
+/* Make sure the contact form does not stretch too wide */
+.right-side .contact-form {
+  width: 100%;
+  
+}
+
+.contact-info {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px; /* Add space between the left and right columns */
+  
+}
+
+/* src/styles/ContactForm.css */
+.contact-form {
+  padding-top: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  width: 100%;
+  max-width: 400px;
+  
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 0.5rem;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem;
+  resize: vertical;
+  background: #fff;
+  transition: border-color 0.3s ease;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: #9911ff;
+  outline: none;
+}
+
+.contact-form textarea {
+  min-height: 100px;
+}
+
+.submit-button {
+  cursor: pointer;
+  color: white;
+  border: none;
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+.contact-form input:hover,
+.contact-form textarea:hover {
+  border-color: #9911ff;
+  animation: pulse-glow 2s infinite ease-in-out;
+  outline: none;
+}
+
+.email-hover-text {
+  font-weight: lighter; /* Light font weight by default */
+  color: #969696a2; /* Light grey color */
+  transition: all 0.3s ease; /* Smooth transition */
+}
+
+.email-hover-text:hover {
+  font-weight: normal; /* Normal font weight on hover */
+  color: #000; /* Dark color on hover */
+}
+
+@keyframes pulse-glow {
+  0% {
+    box-shadow: 0 0 8px #9911ff88;
+  }
+  50% {
+    box-shadow: 0 0 16px #9911ffcc;
+  }
+  100% {
+    box-shadow: 0 0 8px #9911ff88;
+  }
+}
