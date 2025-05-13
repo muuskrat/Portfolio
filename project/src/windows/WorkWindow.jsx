@@ -4,6 +4,11 @@ import { useDraggableWindow } from '../components/useDraggableWindow';
 import '../styles/WorkWindow.css';
 import img1 from '../assets/image.png';
 import horse from '../assets/horse.png';
+import ballphy from '../assets/ballphy.png';
+import aitic from '../assets/aitic.png';
+import atmega from '../assets/atmega.png';
+import blog from '../assets/blog.png';
+import thisweb from '../assets/thisweb.png';
 
 export const Work = ({ onClose, onBringToFront, zIndex, openWindow }) => {
   const {
@@ -68,25 +73,58 @@ export const Work = ({ onClose, onBringToFront, zIndex, openWindow }) => {
 
 const projects = [
   { 
+    title: 'AI Tic-Tac-Toe', 
+    skills: ['Python', 'Algorithms'], 
+    desc1: 'A classic Tic-Tac-Toe game written in Python, featuring an AI opponent powered by the minimax algorithm. The game supports one human and one AI, and includes dynamic board creation, win detection, and recursive game state evaluation.',
+    desc2: 'This project was a hands-on exploration of AI decision trees, recursion, and turn-based game logic. It demonstrates how strategic AI can be implemented with a simple yet powerful algorithm like minimax.',
+    image: aitic
+  },
+    { 
+    title: 'Embedded Systems Project', 
+    skills: ['C', 'ATMEGA'], 
+    desc1: 'A real-time reaction-based combat game built in C for an embedded system using a joystick and LCD display.',
+    desc2: 'This project helped me gain hands-on experience with low-level hardware control, user input handling, and creating engaging gameplay mechanics under tight system constraints.',
+    image: atmega
+  },
+  
+    { 
+    title: 'FullStack Blog App', 
+    skills: ['JS', 'React', 'Node.js', 'HTML', 'CSS'], 
+    desc1: 'A simple and responsive blog application built with React',
+    desc2: 'sers can browse all blog posts, read individual entries, and create new posts. The app uses RESTful API calls to interact with the backend, making it a complete experience.',
+    image: blog
+  },
+    { 
     title: 'Horse Race Game', 
     skills: ['C++', 'SDL', ], 
-    desc1: 'A 2D horse racing game with an integrated horse breeding system, built using SDL (Simple DirectMedia Layer). Players can race their horses, manage stats like speed and stamina, and breed horses to develop stronger generations over time. Features include randomized genetics, dynamic race outcomes, and a retro-inspired pixel art style.',
+    desc1: 'A 2D horse racing game with an integrated horse breeding system, built using SDL (Simple DirectMedia Layer). ',
     desc2: 'Designed and programmed this game from scratch to explore game development fundamentals, simulation mechanics, and low-level graphics programming.',
     image: horse 
   },
   { 
-    title: 'world', 
-    skills: ['C++', 'Python'], 
-    desc: 'Lorem ipsum...',
-    image: img1
+    title: 'Physics Engine', 
+    skills: ['JS', 'HTML'], 
+    desc1: 'A lightweight 2D physics engine written in JavaScript. It simulates realistic movement and collisions',
+    desc2: 'Used this project to deepen my understanding of physics simulation and JavaScript performance. It is a hands-on implementation of core physics concepts, with a focus on simplicity, flexibility, and visual feedback.',     
+    image: ballphy
   },
+  { 
+    title: 'This Website!', 
+    skills: ['JS', 'React', 'Node.js', 'HTML', 'CSS'], 
+    desc1: 'It features draggable windows, smooth animations, and playful styling',
+    desc2: 'Built to showcase my projects and skills in a unique way, blending classic game aesthetics with modern web development tools like React and Framer Motion.',
+    image: thisweb
+  },
+];
+/*
   { 
     title: 'foo', 
     skills: ['Java', 'React'], 
-    desc: 'Lorem ipsum...',
-    image: '/myimage3.jpg'
+    desc1: 'Lorem ipsum...',
+    desc2: '',
+    image: img1
   },
-];
+  */
   
 
     return (
@@ -114,7 +152,7 @@ const projects = [
                         <h2>Development Skills</h2>
                         <SkillBoxes skills={['C', 'C++', 'Java', 'Python', 'JS', 'HTML', 'CSS', 'React', 'Node.js']}/>
                         <div class="divider"></div>
-                        <h2>Projects</h2>
+                        <h2>Personal Projects</h2>
                         <div className="projects">
                           {projects.map((project, index) => (
                             <React.Fragment key={index}>
@@ -134,9 +172,8 @@ const projects = [
                             {index !== projects.length - 1 && <div className="divider"></div>}
                             </React.Fragment>
                           ))}
-                            
-
                         </div>
+                        
                     </div>
             </motion.div>
         </div>

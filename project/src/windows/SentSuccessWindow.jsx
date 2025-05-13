@@ -44,7 +44,7 @@ export const Success = ({ onClose, onBringToFront, zIndex, openWindow }) => {
                 </div>
                     <button className="close-button-MP" onClick={onClose}>[ x ]</button>
                     <div className="window-content-MP">                    
-                        something went right wahoo!!
+                        something went right wahoo!! ( ˶ˆ ᗜ ˆ˵ )
                     </div>
             </motion.div>
         </div>

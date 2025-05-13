@@ -3,6 +3,7 @@ import { useDraggable } from '@dnd-kit/core';
 import { motion } from "framer-motion";
 import { useDraggableWindow } from '../components/useDraggableWindow';
 import { HoverDrawBox } from '../components/HoverDrawBox';
+import resume from '../assets/Mario_Orlando_Resume.pdf';
 
 // Custom Hook
 const useHoverAnimation = () => {
@@ -51,6 +52,7 @@ export const MainPage = ({ onClose, onBringToFront, zIndex, openWindow }) => {
     const [linksHovered, linksHoverHandlers] = useHoverAnimation();
     const [workHovered, workHoverHandlers] = useHoverAnimation();
     const [contactHovered, contactHoverHandlers] = useHoverAnimation();
+    const [resumeHovered, resumeHoverHandlers] = useHoverAnimation();
 
     const box = {
         width: 150,
@@ -167,6 +169,26 @@ export const MainPage = ({ onClose, onBringToFront, zIndex, openWindow }) => {
                                 />
                                 <strong style={{ marginTop: '1px', fontSize: '14px', color: '#9911ff', fontFamily: 'Quicksand' }}>
                                     contact
+                                </strong>
+                            </motion.button>
+                        </HoverDrawBox>
+
+                        <HoverDrawBox>
+                            <motion.button 
+                                className="resume-button"
+                                {...resumeHoverHandlers}
+                                whileTap={{ scale: 0.8 }}
+                                whileHover={{ scale: 1.2 }}
+                                style={box}
+                                onClick={() => window.open(resume, "_blank")}
+                            >
+                                <motion.i 
+                                    className="fa-solid fa-file"
+                                    {...getIconAnimation(resumeHovered)}
+                                    style={{ fontSize: "60px" }}
+                                />
+                                <strong style={{ marginTop: '1px', fontSize: '14px', color: '#9911ff', fontFamily: 'Quicksand' }}>
+                                    resume
                                 </strong>
                             </motion.button>
                         </HoverDrawBox>

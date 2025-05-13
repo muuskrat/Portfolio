@@ -1,5 +1,5 @@
 :root {
-    --window-width-work: 600px;
+    --window-width-work: 620px;
     --window-height-work: 800px;
   }
 
@@ -86,6 +86,14 @@
 
 .work-container{
   margin-bottom: 5px;
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+  border-radius: 10px;
+}
+
+.work-container:hover {
+  box-shadow: 0 0 20px rgba(153, 17, 255, 0.7);
+  transform: scale(1.02);
+  z-index: 1;
 }
 .work-content > div + div {
   margin-top: 12px;
@@ -112,6 +120,30 @@
   flex-direction: column;
   justify-content: flex-start;
 }
+
+.window-content-work {
+  scroll-behavior: smooth;
+}
+
+
+.window-content-work::-webkit-scrollbar {
+    width: 6px; /* very thin */
+}
+
+.window-content-work::-webkit-scrollbar-thumb {
+    background-color: rgba(0,0,0,0.5); /* semi-transparent thumb */
+    border-radius: 10px;
+}
+
+.window-content-work::-webkit-scrollbar-track {
+    background-color: transparent; /* no track */
+}
+
+/* (optional) Still remove buttons, even if invisible) */
+.window-content-work::-webkit-scrollbar-button {
+    display: none;
+}
+
 
 
 

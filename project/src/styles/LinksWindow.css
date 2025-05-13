@@ -30,14 +30,18 @@
 }
 
 .window-content-links{
-width: calc(var(--window-width-links) - 20px);
-height: calc(var(--window-height-links) - 20px);
+  width: calc(var(--window-width-links) - 20px);
+  height: calc(var(--window-height-links) - 20px);
   background-color: antiquewhite;
   box-shadow: inset 0 0 0 3px blue;
   border-radius: 12px;
   display: block;
   justify-content: center;
   padding: 10px;
+   display: flex;
+  justify-content: center; /* Even spacing */
+  align-items: center;
+  gap: 10px; /* Optional spacing between buttons */
 }
 
 .close-button-links {

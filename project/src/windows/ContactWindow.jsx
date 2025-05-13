@@ -47,18 +47,19 @@ export const Contact = ({ onClose, onBringToFront, zIndex, openWindow }) => {
                     setNodeRef(node);
                     windowRef.current = node;
                 }}
-                className="window-box-MP"
+                className="window-box-contact"
                 initial={{ scale: 0, opacity: 0 }}
                 animate={{ scale: 1, opacity: 1 }}
                 exit={{ scale: .15, opacity: 0 }}
                 transition={{ duration: 0.4, scale: { type: "spring", visualDuration: 0.4, bounce: 0.5 } }}
                 style={{ transformOrigin: 'center center' }}
             >
-                <div className="window-header-MP" {...listeners} {...attributes} ref={headerRef}>
+                <div className="window-header-contact" {...listeners} {...attributes} ref={headerRef}>
                     <strong>Contact</strong>
                 </div>
-                <button className="close-button-MP" onClick={onClose}>[ x ]</button>
-                <div className="window-content-MP">
+                <button className="close-button-contact" onClick={onClose}>[ x ]</button>
+                <div className="window-content-contact">
+                    <h2 className="mail-title">yayy mail!</h2>
                     <div className="contact-info">
                         
                         <div className="left-side">

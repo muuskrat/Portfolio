@@ -1,6 +1,8 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence, createBox } from "framer-motion"; 
 import { useDraggableWindow } from '../components/useDraggableWindow';
+import img1 from '../assets/image.png';
+import img2 from '../assets/horse.png';
 
 
 
@@ -22,6 +24,28 @@ export const About = ({ onClose, onBringToFront, zIndex, openWindow }) => {
         borderRadius: 5,
         
     }
+    const images = [
+        img1,
+        img2
+    ];
+
+    const [imageIndex, setImageIndex] = useState(0);
+    const [shake, setShake] = useState(false);
+    const [shakeId, setShakeId] = useState(0);
+
+    const handleImageClick = () => {
+        setShakeId(prev => prev + 1); // trigger re-render of motion.img
+        setShake(true); // start shaking animation
+        setImageIndex((prev) => (prev + 1) % images.length); // switch to next image
+        
+    };
+
+    useEffect(() => {
+    if (shake) {
+        const timer = setTimeout(() => setShake(false), 500);
+        return () => clearTimeout(timer);
+    }
+    }, [shake]);
 
   
 
@@ -48,17 +72,36 @@ export const About = ({ onClose, onBringToFront, zIndex, openWindow }) => {
 
                     <div className="window-content-about">                    
                         <div className="about-hero">
-                            <div className="about-image"></div>
+                            <div className="about-image">
+                                <motion.img
+                                    key={shakeId}
+                                    src={images[imageIndex]}
+                                    alt="Mario Orlando"
+                                    onClick={handleImageClick}
+                                    className="about-image"
+                                    whileHover={{ scale: 1.01 }}
+                                    animate={shake ? { rotate: [0, -5, 5, -5, 5, 0] } : { rotate: 0 }}
+                                    transition={{ duration: 0.2 }}
+                                    style={{
+                                        width: "150px",
+                                        height: "150px",
+                                        borderRadius: "20px",
+                                        objectFit: "cover",
+                                        cursor: "pointer",
+                                        marginRight: "1rem",
+                                    }}
+                                />
+                            </div>
                             <div className="about-title">
-                                <h1>Mario Orlando</h1>
-                                <h2>california based software engineer and web develoepr</h2>
-                                <h2>software engineer at Evu</h2>
+                                <h1 className='my-name'>Mario Orlando</h1>
+                                <p>california based software engineer and web developer <br /> 
+                                    software engineer at Evu</p>
                             </div>
                         </div>
 
                         <div className="about-info">
                                 <div className="info-intro">
-                                    hi! i'm mario, a computer science graduate with experince in that knows
+                                    hi! i'm mario, a computer science graduate with experince in 
                                     <ul>
                                         <li>Software engineering</li>
                                         <li>Frontend web development</li>
@@ -71,8 +114,10 @@ export const About = ({ onClose, onBringToFront, zIndex, openWindow }) => {
                                 <div className="info-education">
                                     <h2 className='title'>EDUCATION</h2>
                                     <div className="education">
-                                        <p className='degree'>Bachelor's of Science</p>
-                                        <p className='year'>(2023)</p>
+                                        <p className='degree'>University of California Riverside  <br/>
+                                            Bachelor's of Science in Computer Science</p>
+                            
+                                        <p className='year'>(Graduated 2023)</p>
                                     </div>
                                 </div>
 
@@ -82,7 +127,7 @@ export const About = ({ onClose, onBringToFront, zIndex, openWindow }) => {
                                         <li>learning about emerging tech</li>
                                         <li>game development</li>
                                         <li>physics based software</li>
-                                        <li>drawing anatomy and landscapes)</li>
+                                        <li>drawing anatomy and landscapes</li>
                                         <li>exercising (255lb bench 💪)</li>
                                     </ul>
                                 </div>
