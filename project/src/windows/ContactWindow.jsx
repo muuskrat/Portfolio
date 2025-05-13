@@ -28,7 +28,7 @@ export const Contact = ({ onClose, onBringToFront, zIndex, openWindow }) => {
     const box = {
         width: 150,
         height: 50,
-        backgroundColor: "#9911ff",
+        backgroundColor: "#8D6B94",
         borderRadius: 5,
         color: "white",
         border: "none",

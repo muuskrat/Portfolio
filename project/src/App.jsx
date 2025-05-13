@@ -10,8 +10,13 @@ import { Work } from './windows/WorkWindow'
 import { Contact } from './windows/ContactWindow'
 import { Success } from './windows/SentSuccessWindow'
 import { Failed } from './windows/SentFailedWindow'
+import WaveBanner from './components/Wave'
 
 import { AnimatePresence, motion } from "framer-motion";
+import ShootingStars from './components/ShootingStars'
+
+
+
 
 
 function App() {
@@ -40,11 +45,13 @@ const bringToFront = (id) => {
     
       <div className="App">
         <div className="content">
+         
           <div className="button-pannel">
             <button onClick={() => openWindow("Music")}>Open Music</button>
             <button onClick={() => openWindow("MainPage")}>Open MainPage</button>
           </div>
-
+          <ShootingStars />
+          <WaveBanner />
           <DndContext>
             <AnimatePresence>
               {openWindows.includes("MainPage") && (

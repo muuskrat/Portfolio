@@ -5,6 +5,7 @@ import { useDraggableWindow } from '../components/useDraggableWindow';
 import { HoverDrawBox } from '../components/HoverDrawBox';
 import resume from '../assets/Mario_Orlando_Resume.pdf';
 
+
 // Custom Hook
 const useHoverAnimation = () => {
   const [isHovered, setIsHovered] = useState(false);
@@ -70,6 +71,7 @@ export const MainPage = ({ onClose, onBringToFront, zIndex, openWindow }) => {
     };
 
     return (
+        
         <div style={{ ...dragStyle, zIndex, position: 'absolute' }} onPointerDown={onBringToFront} onPointerUp={handleDragEnd}>
             <motion.div
                 ref={(node) => {
@@ -89,8 +91,10 @@ export const MainPage = ({ onClose, onBringToFront, zIndex, openWindow }) => {
                 <button className="close-button-MP" onClick={onClose}>[ x ]</button>
 
                 <div className="window-content-MP">
+                    
                     <h2 className="hero">Welcome to my website!</h2>
                     <h3 className="hero-more">software and web developer</h3>
+                    
                     <div className="button-pannel-mainpage">
                         
                         <HoverDrawBox>

@@ -9,6 +9,7 @@ import aitic from '../assets/aitic.png';
 import atmega from '../assets/atmega.png';
 import blog from '../assets/blog.png';
 import thisweb from '../assets/thisweb.png';
+import BannerSkills from '../components/BannerSkills';
 
 export const Work = ({ onClose, onBringToFront, zIndex, openWindow }) => {
   const {
@@ -150,7 +151,7 @@ const projects = [
 
                     <div className="window-content-work">
                         <h2>Development Skills</h2>
-                        <SkillBoxes skills={['C', 'C++', 'Java', 'Python', 'JS', 'HTML', 'CSS', 'React', 'Node.js']}/>
+                        <BannerSkills />
                         <div class="divider"></div>
                         <h2>Personal Projects</h2>
                         <div className="projects">

@@ -5,7 +5,36 @@ html, body, #root {
   padding: 0;
   height: 100%;
   overflow: hidden;
-  background-color: grey;
+
+  
+
+  /*VINTAGE COLOR SCHEMES*/
+  --background-header-color-vintage: #4f46e5;
+  --header-font-color-vintage: white;
+  --button-color-vintage:  #9911ff;
+  --content-background-vintage: antiquewhite;
+  /*VINTAGE COLOR SCHEMES*/
+
+  /*NORMAL COLOR SCHEMES*/
+  --header-color-normal: #363732;
+  --button-color-normal: #8D6B94;
+  --window-color-normal: #DCE1E9;
+  /*NORMAL COLOR SCHEMES*/
+
+  --header-color: #A0B9C8;
+  --button-color: #8D6B94;
+  --window-color: #DCE1E9;
+
+
+  background: linear-gradient(180deg, #1d2a44, #2e1c47);
+
+}
+
+[data-theme="dark"]{
+  --header-color: ;
+  --button-color: ;
+  --window-color: ;
+
 }
 
 .App{
