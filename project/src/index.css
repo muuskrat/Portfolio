@@ -97,3 +97,90 @@ html, body, #root {
   cursor: pointer; /* Make it a pointer cursor on hover */
 }
 
+
+
+
+/* Button Panel Styles */
+.button-panel {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  z-index: 1000;
+}
+
+.windows-button {
+  border: none;
+  padding: 12px;  /* Adjusted padding to keep button size the same */
+  font-size: 14px;
+  width: 90px;
+  height: 90px;
+  background: rgba(255, 255, 255, 0);  /* Transparent background */
+  color: #ffffff;
+  border-radius: 10px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(6px);  /* Glassy effect */
+  box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.1);
+}
+
+.windows-button .icon {
+  font-size: 36px;  /* Increased icon size */
+}
+
+.windows-button .label {
+  margin-top: 5px;
+  font-size: 16px;  /* Increased font size for text */
+}
+
+.windows-button:hover {
+  background-color: rgba(255, 255, 255, 0.2);  /* Slight glassy effect */
+  color: #fff;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.windows-button:active {
+  background-color: rgba(255, 255, 255, 0.4);  /* Darker glassy effect on click */
+}
+
+
+
+
+
+.taskbar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 48px;
+  background-color: rgba(20, 20, 20, 0.8);
+  backdrop-filter: blur(10px);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 12px;
+  font-size: 14px;
+  color: white;
+  z-index: 1000;
+}
+.taskbar-left,
+.taskbar-right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.taskbar-avatar {
+  height: 40px;
+  width: 40px;
+  border-radius: 6px;
+  cursor: pointer;
+  object-fit: cover;
+}
+

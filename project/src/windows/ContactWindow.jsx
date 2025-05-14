@@ -65,7 +65,7 @@ export const Contact = ({ onClose, onBringToFront, zIndex, openWindow }) => {
                         <div className="left-side">
                             
                             <p>the easiest way to contact me is through my email!</p>
-                            <p>i check my email pretty frequently so expect a response lightning fast if i like what you sent me (: </p>
+                            <p>i check my email pretty frequently so expect a response if i like what you sent me (: </p>
                             <img
                                 src={emailPic}
                                 alt="Contact Icon"

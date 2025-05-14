@@ -176,26 +176,7 @@ export const MainPage = ({ onClose, onBringToFront, zIndex, openWindow }) => {
                                 </strong>
                             </motion.button>
                         </HoverDrawBox>
-
-                        <HoverDrawBox>
-                            <motion.button 
-                                className="resume-button"
-                                {...resumeHoverHandlers}
-                                whileTap={{ scale: 0.8 }}
-                                whileHover={{ scale: 1.2 }}
-                                style={box}
-                                onClick={() => window.open(resume, "_blank")}
-                            >
-                                <motion.i 
-                                    className="fa-solid fa-file"
-                                    {...getIconAnimation(resumeHovered)}
-                                    style={{ fontSize: "60px" }}
-                                />
-                                <strong style={{ marginTop: '1px', fontSize: '14px', color: '#9911ff', fontFamily: 'Quicksand' }}>
-                                    resume
-                                </strong>
-                            </motion.button>
-                        </HoverDrawBox>
+                        
 
                     </div>
                 </div>

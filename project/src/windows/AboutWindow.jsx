@@ -98,7 +98,7 @@ export const About = ({ onClose, onBringToFront, zIndex, openWindow }) => {
                                     software engineer at Evu</p>
                             </div>
                         </div>
-
+                        <hr/>
                         <div className="about-info">
                                 <div className="info-intro">
                                     hi! i'm mario, a computer science graduate with experince in 

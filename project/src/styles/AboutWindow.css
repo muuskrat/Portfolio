@@ -61,6 +61,8 @@
     margin-left: 20px;
     box-sizing: border-box;
     font-size: 1.2rem;
+    --window-color: color-mix(in srgb, var(--window-color), white 20%);
+    background-color: var( --window-color);
     
 }
 

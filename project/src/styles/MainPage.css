@@ -60,10 +60,12 @@
 .button-pannel-mainpage{
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
+   gap: 1rem;
   width: 80%;
   margin: 0 auto;
+  
 }
 .button-pannel-mainpage .fa-solid{
   text-shadow: 3px 3px 0px #b3b3b3;
