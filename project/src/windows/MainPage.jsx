@@ -3,8 +3,10 @@ import { useDraggable } from '@dnd-kit/core';
 import { motion } from "framer-motion";
 import { useDraggableWindow } from '../components/useDraggableWindow';
 import { HoverDrawBox } from '../components/HoverDrawBox';
-import resume from '../assets/Mario_Orlando_Resume.pdf';
 
+import { useSound } from '../components/useSound';
+import openSound from '../assets/button_click.wav';
+import closeSound from '../assets/button_close.wav';
 
 // Custom Hook
 const useHoverAnimation = () => {
@@ -48,12 +50,17 @@ export const MainPage = ({ onClose, onBringToFront, zIndex, openWindow }) => {
         setNodeRef
     } = useDraggableWindow('MainPage');
 
+    const playOpen = useSound(openSound);
+    const playClose = useSound(closeSound);
+
     // One hover hook for each button
     const [aboutHovered, aboutHoverHandlers] = useHoverAnimation();
     const [linksHovered, linksHoverHandlers] = useHoverAnimation();
     const [workHovered, workHoverHandlers] = useHoverAnimation();
     const [contactHovered, contactHoverHandlers] = useHoverAnimation();
     const [resumeHovered, resumeHoverHandlers] = useHoverAnimation();
+
+    
 
     const box = {
         width: 150,
@@ -68,6 +75,54 @@ export const MainPage = ({ onClose, onBringToFront, zIndex, openWindow }) => {
         border: 'none',
         backgroundColor: 'transparent',
         fontSize: "60px",
+    };
+
+    const WaveText = ({ text }) => {
+  const letters = Array.from(text);
+
+  const container = {
+    hidden: {},
+    visible: {
+      transition: {
+        staggerChildren: 0.1,
+        repeat: Infinity,
+        repeatType: "loop",
+      }
+    }
+  };
+
+  const child = {
+    hidden: { y: 0 },
+    visible: {
+      y: [0, -10, 0],
+      transition: {
+        duration: 1.2,
+        ease: "easeInOut",
+        repeat: Infinity,
+        repeatType: "loop"
+      }
+    }
+  };
+
+    return (
+        <motion.span
+        style={{ display: "inline-flex", overflow: "hidden" }}
+        variants={container}
+        initial="hidden"
+        animate="visible"
+        >
+        {letters.map((letter, index) => (
+            <motion.span
+            key={index}
+            variants={child}
+            style={{ display: "inline-block", fontWeight: 'bold' }}
+            transition={{ delay: index * 0.1 }}
+            >
+            {letter === " " ? "\u00A0" : letter}
+            </motion.span>
+        ))}
+        </motion.span>
+    );
     };
 
     return (
@@ -86,14 +141,17 @@ export const MainPage = ({ onClose, onBringToFront, zIndex, openWindow }) => {
                 style={{ transformOrigin: 'center center' }}
             >
                 <div className="window-header-MP" {...listeners} {...attributes} ref={headerRef}>
-                    <strong>Mo main Page f</strong>
+                    <strong>Mario Hub</strong>
                 </div>
-                <button className="close-button-MP" onClick={onClose}>[ x ]</button>
+                <button className="close-button-MP" onClick={() => {playClose(); onClose();}}>[ x ]</button>
 
                 <div className="window-content-MP">
                     
-                    <h2 className="hero">Welcome to my website!</h2>
-                    <h3 className="hero-more">software and web developer</h3>
+                    
+                    <h2 className='hero-name'>welcome to my website! <br /><span className="highlight-name">i'm mario</span></h2>
+                    <p className="hero-more">software and web developer</p>
+                   
+                    
                     
                     <div className="button-pannel-mainpage">
                         
@@ -104,7 +162,10 @@ export const MainPage = ({ onClose, onBringToFront, zIndex, openWindow }) => {
                                 whileTap={{ scale: 0.8 }}
                                 whileHover={{ scale: 1.2 }}
                                 style={box}
-                                onClick={() => openWindow("About")}
+                                onClick={() => {
+                                    playOpen();
+                                    openWindow("About");
+                                }}
                             >
                                 <motion.i 
                                     className="fa-solid fa-comment"
@@ -124,7 +185,10 @@ export const MainPage = ({ onClose, onBringToFront, zIndex, openWindow }) => {
                                 whileTap={{ scale: 0.8 }}
                                 whileHover={{ scale: 1.2 }}
                                 style={box}
-                                onClick={() => openWindow("Links")}
+                                onClick={() => {
+                                    playOpen();
+                                    openWindow("Links");
+                                }}
                             >
                                 <motion.i 
                                     className="fa-solid fa-link"
@@ -144,7 +208,10 @@ export const MainPage = ({ onClose, onBringToFront, zIndex, openWindow }) => {
                                 whileTap={{ scale: 0.8 }}
                                 whileHover={{ scale: 1.2 }}
                                 style={box}
-                                onClick={() => openWindow("Work")}
+                                onClick={() => {
+                                    playOpen();
+                                    openWindow("Work");
+                                }}
                             >
                                 <motion.i 
                                     className="fa-solid fa-folder-open"
@@ -164,7 +231,10 @@ export const MainPage = ({ onClose, onBringToFront, zIndex, openWindow }) => {
                                 whileTap={{ scale: 0.8 }}
                                 whileHover={{ scale: 1.2 }}
                                 style={box}
-                                onClick={() => openWindow("Contact")}
+                                onClick={() => {
+                                    playOpen();
+                                    openWindow("Contact");
+                                }}
                             >
                                 <motion.i 
                                     className="fa-solid fa-envelope"

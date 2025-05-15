@@ -11,6 +11,10 @@ import blog from '../assets/blog.png';
 import thisweb from '../assets/thisweb.png';
 import BannerSkills from '../components/BannerSkills';
 
+import { useSound } from '../components/useSound';
+import openSound from '../assets/button_click.wav';
+import closeSound from '../assets/button_close.wav';
+
 export const Work = ({ onClose, onBringToFront, zIndex, openWindow }) => {
   const {
       windowRef,
@@ -21,6 +25,9 @@ export const Work = ({ onClose, onBringToFront, zIndex, openWindow }) => {
       listeners,
       setNodeRef
   } = useDraggableWindow('Work');
+
+  const playOpen = useSound(openSound);
+  const playClose = useSound(closeSound);
 
   const imagebox = {
       width: 200,
@@ -147,7 +154,7 @@ const projects = [
                 <div className="window-header-work" {...listeners} {...attributes} ref={headerRef}>
                     <strong>Work</strong>
                 </div>
-                    <button className="close-button-work" onClick={onClose}>[ x ]</button>
+                    <button className="close-button-MP" onClick={() => {playClose(); onClose();}}>[ x ]</button>
 
                     <div className="window-content-work">
                         <h2>Development Skills</h2>

@@ -31,12 +31,16 @@
   height: 680px;
   background-color: var(--window-color);
   box-shadow: inset 0 0 0 3px var(--header-color),
-    3px 3px 0px #b3b3b3;
+  3px 3px 0px #b3b3b3;
   border-radius: 12px;
   display: block;
-  justify-content: center;
+ 
   padding: 10px;
-  
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; 
+  text-align: center;
 }
 
 .window-content-MP .scroll{
@@ -71,21 +75,101 @@
   text-shadow: 3px 3px 0px #b3b3b3;
 }
 
+.hero-name{
+    font-size: 3rem;         /* Make it big */
+  text-align: center;      /* Center horizontally */
+  margin: 0.5em 0;
+  padding-bottom: -10px;
+}
+
+.hero-more{
+  text-align: center;      /* Center horizontally */
+  margin: 0.5em 0;
+  padding-top: -5px;
+  font-size: 2rem;
+}
+
+.highlight-name {
+  color: #9911ff;
+  font-size: 4rem;
+}
 
 
 
-@media (max-width:1300px){
-  /* MAIN PAGE*/
-  .window-box-MP{
-      width: 700px;
-      height: 450px;
+
+@media (max-width: 1300px) {
+  .window-box-MP {
+    width: 750px;
+    height: 500px;
   }
-  .window-header-MP{
-      width: 700px;
+
+  .window-header-MP {
+    width: 750px;
+    font-size: 1.6rem;
   }
-  .window-content-MP{
-      width: 680px;
-      height: 450px;
+
+  .window-content-MP {
+    width: 730px;
+    height: 460px;
+  }
+
+  .hero-name {
+    font-size: 2.4rem;
+  }
+
+  .highlight-name {
+    font-size: 3rem;
+  }
+
+  .hero-more {
+    font-size: 1.5rem;
   }
 }
+
+@media (max-width: 768px) {
+  .window-box-MP {
+    width: 70vw;
+    height: 70vh; /* Smaller height to avoid touching bottom */
+  }
+
+  .window-header-MP {
+    width: 100%;
+    font-size: 1.3rem;
+  }
+
+  .window-content-MP {
+    width: 96.8%;
+    height: calc(80vh - 40px); /* Adjust for header */
+    padding: 8px;
+  }
+
+  .hero-name {
+    font-size: 1.8rem;
+  }
+
+  .highlight-name {
+    font-size: 2.4rem;
+  }
+
+  .hero-more {
+    font-size: 1.2rem;
+  }
+
+  .button-pannel-mainpage {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 per row */
+    gap: 1rem;
+    width: 100%;
+    margin-top: 1rem;
+    justify-items: center;
+  }
+
+  .button-pannel-mainpage .fa-solid {
+    font-size: 40px !important;
+  }
+}
+
+
+
+
   

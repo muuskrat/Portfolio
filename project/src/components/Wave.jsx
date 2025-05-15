@@ -11,7 +11,7 @@ const Wave = () => (
     paused={false}
     options={{
       height: 30,
-      amplitude: 30,
+      amplitude: 20,
       speed: 0.2,
       points: 3,
     }}

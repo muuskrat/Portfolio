@@ -20,8 +20,8 @@ html, body, #root {
   --button-color-normal: #8D6B94;
   --window-color-normal: #DCE1E9;
   /*NORMAL COLOR SCHEMES*/
-
-  --header-color: #A0B9C8;
+ /*header #A0B9C8*/
+  --header-color: #0E131F;
   --button-color: #8D6B94;
   --window-color: #DCE1E9;
 
@@ -182,5 +182,28 @@ html, body, #root {
   border-radius: 6px;
   cursor: pointer;
   object-fit: cover;
+}
+
+.looping-audio-button {
+  background-color: #9911ff;
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: background-color 0.3s ease;
+  font-family: 'Quicksand', sans-serif;
+}
+
+.looping-audio-button:hover {
+  background-color: #7a0fcc;
+}
+
+.looping-audio-button:active {
+  background-color: #5e0bb0;
 }
 

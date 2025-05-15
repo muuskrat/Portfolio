@@ -6,6 +6,10 @@ import { useDraggableWindow } from '../components/useDraggableWindow';
 import { FaGithub, FaLinkedin, FaEnvelope } from 'react-icons/fa';
 import '../styles/LinksWindow.css';
 
+import { useSound } from '../components/useSound';
+import openSound from '../assets/button_click.wav';
+import closeSound from '../assets/button_close.wav';
+
 export const Links = ({ onClose, onBringToFront, zIndex, openWindow }) => {
     const {
         windowRef,
@@ -16,6 +20,8 @@ export const Links = ({ onClose, onBringToFront, zIndex, openWindow }) => {
         listeners,
         setNodeRef
     } = useDraggableWindow('Links');
+    const playOpen = useSound(openSound);
+    const playClose = useSound(closeSound);
 
     const ref = useRef(null);
     const [dimensions, setDimensions] = useState({ width: 0, height: 0, top: 0, left: 0 });
@@ -96,7 +102,7 @@ export const Links = ({ onClose, onBringToFront, zIndex, openWindow }) => {
                 <div className="window-header-links" {...listeners} {...attributes} ref={headerRef}>
                     <strong>Links</strong>
                 </div>
-                <button className="close-button-links" onClick={onClose}>[ x ]</button>
+                <button className="close-button-MP" onClick={() => {playClose(); onClose();}}>[ x ]</button>
                 <div className="window-content-links">
                     <motion.button
                         className="git-button"

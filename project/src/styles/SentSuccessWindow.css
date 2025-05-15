@@ -1,0 +1,58 @@
+:root {
+    --window-width-success: 300px;
+    --window-height-success: 100px;
+  }
+
+.window-box-success{
+    width: var(--window-width-success);
+    height: var(--window-height-success);
+    position: absolute;
+    background-color: var(--header-color);
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    box-shadow: 3px 3px 0px #b3b3b3;
+}
+
+.window-header-success{
+  touch-action: none;
+
+  width: var(--window-width-success);
+  height: 40px;
+  background-color: var(--header-color);
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 12px;
+  cursor: grab;
+  font-size: 2rem;
+  user-select: none;
+}
+
+.window-content-success{
+  width: calc(var(--window-width-success) - 20px);
+  height: calc(var(--window-height-success) - 20px);
+  background-color: var(--window-color);
+  box-shadow: inset 0 0 0 3px var(--header-color), 
+    3px 3px 0px #b3b3b3;
+  border-radius: 12px;
+  display: block;
+  justify-content: center;
+  padding: 10px;
+   display: flex;
+  justify-content: center; 
+  align-items: center;
+  gap: 10px; 
+}
+
+.close-button-success {
+    position: absolute; 
+    top: .5%; 
+    right: 1%;
+    background: transparent; 
+    border: none; 
+    color: white; 
+    font-size: 15px; 
+    border-radius: 5px;
+    cursor: pointer; 
+  }

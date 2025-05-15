@@ -1,8 +1,15 @@
-import React, { useState, useEffect, useRef } from 'react';
-import { motion, AnimatePresence, createBox } from "framer-motion"; 
+import React, { useRef } from 'react';
+import { motion } from "framer-motion";
 import { useDraggableWindow } from '../components/useDraggableWindow';
+import '../styles/Music.css';
 
-export const Music = ({ onClose, onBringToFront, zIndex, openWindow }) => {
+import { useSound } from '../components/useSound';
+import openSound from '../assets/button_click.wav';
+import closeSound from '../assets/button_close.wav';
+import { LoopingAudioButton } from '../components/LoopingAudioButton';
+
+
+export const Music = ({ onClose, onBringToFront, zIndex }) => {
   const {
     windowRef,
     headerRef,
@@ -13,40 +20,47 @@ export const Music = ({ onClose, onBringToFront, zIndex, openWindow }) => {
     setNodeRef
   } = useDraggableWindow('Music');
 
-  const box = {
-    width: 100,
-    height: 100,
-    backgroundColor: "#9911ff",
-    borderRadius: 5,
-    
-}
+  const playOpen = useSound(openSound);
+  const playClose = useSound(closeSound);
 
-  
+  // Ref to control audio inside LoopingAudioButton
+  const audioButtonRef = useRef();
 
-    return (
-        <div style={{...dragStyle, zIndex, position: 'absolute'}} onPointerDown={onBringToFront} onPointerUp={handleDragEnd}>
-            <motion.div
-                ref={(node) => {
-                    setNodeRef(node);
-                    windowRef.current = node;
-                }}
-                className="window-box-MP"
-                initial={{ scale: 0, opacity: 0 }}
-                animate={{ scale: 1, opacity: 1 }}
-                exit={{ scale: .15, opacity: 0 }}
-                transition={{ duration: 0.4, 
-                            scale: { type: "spring", visualDuration: 0.4, bounce: 0.5 }, }}
-                style={{ transformOrigin: 'center center' }}
-            >
-                <div className="window-header-MP" {...listeners} {...attributes} ref={headerRef}>
-                    <strong>Music</strong>
-                </div>
-                    <button className="close-button-MP" onClick={onClose}>[ x ]</button>
+  const handleClose = () => {
+    // Stop and reset audio before closing
+    if (audioButtonRef.current?.stop) {
+      audioButtonRef.current.stop();
+    }
+    playClose();
+    onClose();
+  };
 
-                    <div className="window-content-MP">                    
-
-                    </div>
-            </motion.div>
+  return (
+    <div style={{ ...dragStyle, zIndex, position: 'absolute' }} onPointerDown={onBringToFront} onPointerUp={handleDragEnd}>
+      <motion.div
+        ref={(node) => {
+          setNodeRef(node);
+          windowRef.current = node;
+        }}
+        className="window-box-music"
+        initial={{ scale: 0, opacity: 0 }}
+        animate={{ scale: 1, opacity: 1 }}
+        exit={{ scale: 0.15, opacity: 0 }}
+        transition={{
+          duration: 0.4,
+          scale: { type: "spring", visualDuration: 0.4, bounce: 0.5 },
+        }}
+        style={{ transformOrigin: 'center center' }}
+      >
+        <div className="window-header-music" {...listeners} {...attributes} ref={headerRef}>
+          <strong>Music</strong>
         </div>
+        <button className="close-button-MP" onClick={handleClose}>[ x ]</button>
+
+        <div className="window-content-music">
+          <LoopingAudioButton ref={audioButtonRef} />
+        </div>
+      </motion.div>
+    </div>
   );
 };

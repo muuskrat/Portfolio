@@ -4,6 +4,10 @@ import { useDraggableWindow } from '../components/useDraggableWindow';
 import img1 from '../assets/image.png';
 import img2 from '../assets/horse.png';
 
+import { useSound } from '../components/useSound';
+import openSound from '../assets/button_click.wav';
+import closeSound from '../assets/button_close.wav';
+
 
 
 export const About = ({ onClose, onBringToFront, zIndex, openWindow }) => {
@@ -16,6 +20,9 @@ export const About = ({ onClose, onBringToFront, zIndex, openWindow }) => {
         listeners,
         setNodeRef
     } = useDraggableWindow('About');
+    const playOpen = useSound(openSound);
+    const playClose = useSound(closeSound);
+    
 
     const box = {
         width: 100,
@@ -68,7 +75,7 @@ export const About = ({ onClose, onBringToFront, zIndex, openWindow }) => {
                 <div className="window-header-about" {...listeners} {...attributes} ref={headerRef}>
                     <strong>About</strong>
                 </div>
-                    <button className="close-button-about" onClick={onClose}>[ x ]</button>
+                    <button className="close-button-MP" onClick={() => {playClose(); onClose();}}>[ x ]</button>
 
                     <div className="window-content-about">                    
                         <div className="about-hero">

@@ -5,6 +5,10 @@ import ContactForm from '../components/ContactForm';
 import emailPic from '../assets/email.jpg';
 import '../styles/ContactWindow.css';
 
+import { useSound } from '../components/useSound';
+import openSound from '../assets/button_click.wav';
+import closeSound from '../assets/button_close.wav';
+
 export const Contact = ({ onClose, onBringToFront, zIndex, openWindow }) => {
     const {
         windowRef,
@@ -15,6 +19,8 @@ export const Contact = ({ onClose, onBringToFront, zIndex, openWindow }) => {
         listeners,
         setNodeRef
     } = useDraggableWindow('Contact');
+    const playOpen = useSound(openSound);
+    const playClose = useSound(closeSound);
 
     const [copied, setCopied] = useState(false);
     const email = "mariogon858@gmail.com";
@@ -57,7 +63,7 @@ export const Contact = ({ onClose, onBringToFront, zIndex, openWindow }) => {
                 <div className="window-header-contact" {...listeners} {...attributes} ref={headerRef}>
                     <strong>Contact</strong>
                 </div>
-                <button className="close-button-contact" onClick={onClose}>[ x ]</button>
+                <button className="close-button-MP" onClick={() => {playClose(); onClose();}}>[ x ]</button>
                 <div className="window-content-contact">
                     <h2 className="mail-title">yayy mail!</h2>
                     <div className="contact-info">

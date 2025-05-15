@@ -1,6 +1,11 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence, createBox } from "framer-motion"; 
 import { useDraggableWindow } from '../components/useDraggableWindow';
+import '../styles/SentFailedWindow.css';
+
+import { useSound } from '../components/useSound';
+import openSound from '../assets/button_click.wav';
+import closeSound from '../assets/button_close.wav';
 
 export const Failed = ({ onClose, onBringToFront, zIndex, openWindow }) => {
     const {
@@ -12,6 +17,8 @@ export const Failed = ({ onClose, onBringToFront, zIndex, openWindow }) => {
         listeners,
         setNodeRef
     } = useDraggableWindow('Failed');
+    const playOpen = useSound(openSound);
+    const playClose = useSound(closeSound);
 
     const box = {
         width: 100,
@@ -30,7 +37,7 @@ export const Failed = ({ onClose, onBringToFront, zIndex, openWindow }) => {
                     setNodeRef(node);
                     windowRef.current = node;
                 }}
-                className="window-box-MP"
+                className="window-box-failed"
                 initial={{ scale: 0, opacity: 0 }}
                 animate={{ scale: 1, opacity: 1 }}
                 exit={{ scale: .15, opacity: 0 }}
@@ -39,12 +46,13 @@ export const Failed = ({ onClose, onBringToFront, zIndex, openWindow }) => {
                 style={{ transformOrigin: 'center center' }}
                 //whileHover={{scale: 1.05,}}
             >
-                <div className="window-header-MP" {...listeners} {...attributes} ref={headerRef}>
+                <div className="window-header-failed" {...listeners} {...attributes} ref={headerRef}>
                     <strong>Failed</strong>
                 </div>
-                    <button className="close-button-MP" onClick={onClose}>[ x ]</button>
-                    <div className="window-content-MP">                    
-                        epic fail
+                    <button className="close-button-MP" onClick={() => {playClose(); onClose();}}>[ x ]</button>
+                    <div className="window-content-failed">
+                        <p>email not sent</p>                    
+                        (╥﹏╥)
                     </div>
             </motion.div>
         </div>

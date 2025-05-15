@@ -1,0 +1,58 @@
+:root {
+    --window-width-failed: 300px;
+    --window-height-failed: 100px;
+  }
+
+.window-box-failed{
+    width: var(--window-width-failed);
+    height: var(--window-height-failed);
+    position: absolute;
+    background-color: #EE7674;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    box-shadow: 3px 3px 0px #b3b3b3;
+}
+
+.window-header-failed{
+  touch-action: none;
+
+  width: var(--window-width-failed);
+  height: 40px;
+  background-color: #EE7674;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 12px;
+  cursor: grab;
+  font-size: 2rem;
+  user-select: none;
+}
+
+.window-content-failed{
+  width: calc(var(--window-width-failed) - 20px);
+  height: calc(var(--window-height-failed) - 20px);
+  background-color: var(--window-color);
+  box-shadow: inset 0 0 0 3px #EE7674, 
+    3px 3px 0px #b3b3b3;
+  border-radius: 12px;
+  display: block;
+  justify-content: center;
+  padding: 10px;
+   display: flex;
+  justify-content: center; 
+  align-items: center;
+  gap: 10px; 
+}
+
+.close-button-failed {
+    position: absolute; 
+    top: .5%; 
+    right: 1%;
+    background: transparent; 
+    border: none; 
+    color: white; 
+    font-size: 15px; 
+    border-radius: 5px;
+    cursor: pointer; 
+  }

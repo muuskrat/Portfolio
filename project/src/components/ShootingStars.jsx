@@ -10,7 +10,7 @@ const ShootingStars = () => {
     return Array.from({ length: 60 }, (_, i) => ({
       id: i,
       left: Math.random() * 100,
-      top: Math.random() * 100,
+      top: Math.random() * 80,
       size: Math.random() * 2 + 1,
       delay: Math.random() * 10,
       intensity: Math.floor(Math.random() * 10 + 5),
