@@ -4,7 +4,9 @@ const cors = require('cors');
 require('dotenv').config();
 
 const app = express();
-app.use(cors()); // Allow requests from frontend
+app.use(cors({
+  origin: 'https://monumental-mousse-1e2c09.netlify.app'
+}));
 app.use(express.json());
 
 app.post('/api/send-email', async (req, res) => {

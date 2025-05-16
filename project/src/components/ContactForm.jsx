@@ -25,7 +25,7 @@ function ContactForm({ openWindow }) {
     setIsSending(true); // disable button on send
 
     try {
-      const response = await fetch('http://localhost:5000/api/send-email', {
+      const response = await fetch('https://portfolio-ab5n.onrender.com/api/send-email', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData),
