@@ -48,6 +48,7 @@ const ShootingStars = () => {
 
   return (
     <div className="shooting-stars-container">
+      <div className="moon" />
       {/* Static stars */}
       {staticStars.map((star) => (
         <div

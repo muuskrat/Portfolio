@@ -1,8 +1,11 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence, createBox } from "framer-motion"; 
 import { useDraggableWindow } from '../components/useDraggableWindow';
-import img1 from '../assets/image.png';
-import img2 from '../assets/horse.png';
+import img1 from '../assets/image.webp';
+import img2 from '../assets/horse.webp';
+
+import img3 from '../assets/pfp1.webp';
+import img4 from '../assets/pfp2.webp';
 
 import { useSound } from '../components/useSound';
 import openSound from '../assets/button_click.wav';
@@ -32,8 +35,9 @@ export const About = ({ onClose, onBringToFront, zIndex, openWindow }) => {
         
     }
     const images = [
+        img3,
         img1,
-        img2
+        img4
     ];
 
     const [imageIndex, setImageIndex] = useState(0);

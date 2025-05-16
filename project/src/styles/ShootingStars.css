@@ -42,3 +42,15 @@
     opacity: 1;
   }
 }
+
+.moon {
+  position: absolute;
+  top: 10%;
+  right: 5%;
+  width: 100px;
+  height: 100px;
+  background: radial-gradient(circle at 30% 30%, #fdf5e6, #dcdcdc);
+  border-radius: 50%;
+  box-shadow: 0 0 40px 10px rgba(255, 255, 255, 0.2);
+  z-index: 0;
+}

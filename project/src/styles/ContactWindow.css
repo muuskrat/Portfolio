@@ -255,3 +255,138 @@
     box-shadow: 0 0 8px #9911ff88;
   }
 }
+
+
+
+@media (max-width: 1300px) {
+  :root {
+    --window-width-contact: 700px;
+    --window-height-contact: 460px;
+  }
+
+  .window-content-contact {
+    width: calc(var(--window-width-contact) - 20px);
+    height: calc(var(--window-height-contact) - 20px);
+  }
+
+  .window-header-contact {
+    font-size: 1.8rem;
+    width: var(--window-width-contact);
+  }
+
+  .window-content-contact {
+    font-size: 1rem;
+    padding: 8px;
+  }
+
+  .mail-title {
+    font-size: 1.8rem;
+  }
+
+  .contact-form input,
+  .contact-form textarea {
+    font-size: 0.95rem;
+  }
+
+  .submit-button {
+    font-size: 0.95rem;
+    height: 45px;
+  }
+
+  .email-container {
+    font-size: 0.95rem;
+  }
+
+  .left-side p,
+  .right-side p {
+    font-size: 0.95rem;
+  }
+
+  .right-side .contact-form {
+    max-width: 95%;
+  }
+}
+
+/* Responsive for tablets and small screens */
+@media (max-width: 768px) {
+  :root {
+    --window-width-contact: 95vw;
+    --window-height-contact: 90vh;
+  }
+
+  .window-box-contact {
+    width: var(--window-width-contact);
+    height: calc(var(--window-height-contact) - 350px);
+  }
+
+  .window-header-contact {
+    font-size: 1.4rem;
+    width: var(--window-width-contact);
+  }
+
+  .window-content-contact {
+    width: calc(var(--window-width-contact) - 10px);
+    height: calc(var(--window-height-contact) - 350px);
+    font-size: 1rem;
+    padding: 5px;
+    overflow: auto;
+  }
+
+  .left-side p,
+  .right-side p {
+    font-size: 0.95rem;
+  }
+
+  .email-container {
+    font-size: 0.95rem;
+  }
+
+  .mail-title {
+    font-size: 1.6rem;
+  }
+
+  .contact-form input,
+  .contact-form textarea {
+    font-size: 0.95rem;
+  }
+
+  .submit-button {
+    font-size: 0.95rem;
+  }
+}
+
+/* Small mobile screens */
+@media (max-width: 480px) {
+  .window-box-contact {
+    border-radius: 6px;
+  }
+
+  .window-header-contact {
+    height: 35px;
+    font-size: 1.2rem;
+    border-radius: 6px;
+  }
+
+  .mail-title {
+    font-size: 1.4rem;
+  }
+
+  .contact-info {
+    gap: 10px;
+  }
+
+  .contact-form {
+    gap: 0.5rem;
+  }
+
+  .contact-form input,
+  .contact-form textarea {
+    font-size: 0.9rem;
+    padding: 0.4rem;
+  }
+
+  .submit-button {
+    font-size: 0.9rem;
+    height: 45px;
+  }
+}

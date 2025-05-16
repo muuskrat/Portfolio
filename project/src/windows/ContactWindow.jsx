@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { motion } from "framer-motion"; 
 import { useDraggableWindow } from '../components/useDraggableWindow';
 import ContactForm from '../components/ContactForm';
-import emailPic from '../assets/email.jpg';
+import emailPic from '../assets/email.webp';
 import '../styles/ContactWindow.css';
 
 import { useSound } from '../components/useSound';

@@ -1,10 +1,12 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import img1 from "../assets/image.png";
-import img2 from "../assets/horse.png";
+import img1 from "../assets/image.webp";
+import img2 from "../assets/pfp1.webp";
+import img3 from "../assets/pfp2.webp";
+
 
 export default function TaskbarImageSwitcher() {
-  const images = [img1, img2];
+  const images = [img1, img2, img3];
   const [index, setIndex] = useState(0);
   const [shake, setShake] = useState(false);
   const [shakeId, setShakeId] = useState(0);

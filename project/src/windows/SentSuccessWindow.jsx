@@ -47,11 +47,11 @@ export const Success = ({ onClose, onBringToFront, zIndex, openWindow }) => {
                 //whileHover={{scale: 1.05,}}
             >
                 <div className="window-header-success" {...listeners} {...attributes} ref={headerRef}>
-                    <strong>Success</strong>
+                    <strong>( ˶ˆ ᗜ ˆ˵ )</strong>
                 </div>
                     <button className="close-button-MP" onClick={() => {playClose(); onClose();}}>[ x ]</button>
                     <div className="window-content-success">                    
-                        something went right wahoo!! ( ˶ˆ ᗜ ˆ˵ )
+                        email sent! <br />something went right wahoo!! 
                     </div>
             </motion.div>
         </div>

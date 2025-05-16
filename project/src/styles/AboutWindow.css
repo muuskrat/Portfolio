@@ -161,4 +161,51 @@
       height: 450px;
   }
 }
-  
+
+@media (max-width: 768px) {
+  .window-box-about {
+    width: 70vw;
+    height: 70vh;
+  }
+
+  .window-header-about {
+    width: 100%;
+    font-size: 1.3rem;
+  }
+
+  .window-content-about {
+    width: 96.8%;
+    height: calc(70vh - 40px);
+    padding: 8px;
+  }
+
+  .about-title {
+    flex-direction: column;
+    align-items: flex-start;
+    margin-left: 10px;
+    height: 30%;
+  }
+
+  .my-name {
+    font-size: 1.8rem;
+  }
+
+  .about-info {
+    font-size: 1rem;
+    margin-left: 10px;
+    height: 55%;
+  }
+
+  .info-education .education,
+  .info-language .language {
+    padding-left: 10px;
+    margin-left: 6px;
+    border-left-width: 3px;
+  }
+
+  .close-button-about {
+    top: 1%;
+    right: 2%;
+    font-size: 13px;
+  }
+}
