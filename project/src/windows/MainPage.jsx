@@ -141,7 +141,7 @@ export const MainPage = ({ onClose, onBringToFront, zIndex, openWindow }) => {
                 style={{ transformOrigin: 'center center' }}
             >
                 <div className="window-header-MP" {...listeners} {...attributes} ref={headerRef}>
-                    <strong>Mario Hub</strong>
+                    <strong>Mario Party</strong>
                 </div>
                 <button className="close-button-MP" onClick={() => {playClose(); onClose();}}>[ x ]</button>
 
