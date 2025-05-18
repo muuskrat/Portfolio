@@ -5,7 +5,7 @@ require('dotenv').config();
 
 const app = express();
 app.use(cors({
-  origin: 'https://itsa-me-mar.io/'
+  origin: 'https://monumental-mousse-1e2c09.netlify.app'
 }));
 app.use(express.json());
 
